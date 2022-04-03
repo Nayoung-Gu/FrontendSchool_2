@@ -1,23 +1,32 @@
 body {
-  background-color: #f5f6f7;
-  padding-bottom: 50px;
+  background-color: white;
+  width: 100vw;
+  margin: 0 0 50px 0;
+  padding: 0;
 }
 
-form {
+.login-form {
   width: 80%;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
 }
 
-h1 {
+.login-header__title {
   color: #00c850;
   text-align: center;
   font-weight: bolder;
   margin: 40px 0;
   font-size: 50px;
+  padding-top: 30px;
 }
 
-div {
+.login {
+  width: 80%;
+  max-width: 800px;
+  background-color: #f5f6f7;
+  margin: 0 auto;
+}
+
+.login-div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,6 +63,15 @@ input:focus {
   padding-left: 5px;
 }
 
+.birth__year {
+  margin-top: 5px;
+}
+
+.birth__year,
+.birth__month {
+  margin-right: 12px;
+}
+
 .id {
   text-align: right;
   padding-right: 15px;
@@ -77,10 +95,16 @@ input:focus {
 
 .phone {
   width: 70%;
+  float: left;
 }
 
-.phone-wrap {
-  display: flex;
+.phone__confirmation-number {
+  width: 25%;
+  float: right;
+}
+
+.phone_wrap {
+  overflow: hidden;
 }
 
 input[type="submit"] {
@@ -90,6 +114,7 @@ input[type="submit"] {
   text-align: center;
   margin-top: 30px;
   height: 60px;
+  border: none;
 }
 
 input[type="submit"]:hover {
