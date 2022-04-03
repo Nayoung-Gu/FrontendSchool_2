@@ -12,14 +12,18 @@ body {
 }
 
 .wrapper .header {
-  height: 50px;
+  height: 80px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  font-size: 40px;
-  border-left: 10px solid salmon;
   color: salmon;
-  padding: 30px;
+  padding: 20px 0;
   box-shadow: 0 5px 100px rgba(1, 1, 1, 0.2);
+}
+
+.header__title {
+  border-left: 10px solid salmon;
+  font-size: 30px;
+  padding-left: 20px;
 }
 
 .list li {
