@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="google-form">
+      <header class="form-header">
+        <h1 class="form-header__title">나와 잘 맞는 회사는?</h1>
+        <p class="form-header__intro">
+          가고 싶은 회사에 대한 호감도를 조사합니다.
+        </p>
+      </header>
+      <main class="form-main">
+        <form action="#" method="get" class="form">
+          <fieldset class="fieldset fieldset1">
+            <legend>회사명</legend>
+            <p class="form-question">
+              다음 문자중에 왠지 마음에 드는 것을 하나 고르세요
+            </p>
+            <ul class="first-list">
+              <li>
+                <input type="radio" id="네" name="company" required /><label
+                  for="네"
+                  >네</label
+                >
+              </li>
+              <li>
+                <input type="radio" id="카" name="company" /><label for="카"
+                  >카</label
+                >
+              </li>
+              <li>
+                <input type="radio" id="라" name="company" /><label for="라"
+                  >라</label
+                >
+              </li>
+              <li>
+                <input type="radio" id="쿠" name="company" /><label for="쿠"
+                  >쿠</label
+                >
+              </li>
+              <li>
+                <input type="radio" id="베" name="company" /><label for="베"
+                  >베</label
+                >
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="fieldset fieldset2">
+            <legend>메신저</legend>
+            <p class="form-question">
+              친구와 문자를 합니다. 다음중 어떤 메신저를 이용하시겠습니까? 모두
+              골라주세요.
+            </p>
+            <ul class="second-list">
+              <li>
+                <input type="checkbox" id="K" required /><label for="K"
+                  >카카오톡</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="L" /><label for="L">라인</label>
+              </li>
+              <li>
+                <input type="checkbox" id="I" /><label for="I"
+                  >인스타그램 디엠</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="N" /><label for="N">네이트온</label>
+              </li>
+              <li>
+                <input type="checkbox" id="B" /><label for="B">버디버디</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="fieldset fieldset3">
+            <legend>포부</legend>
+            <p class="form-question">
+              면접에서 자신의 포부를 한 문장으로 얘기한다면?
+            </p>
+            <input
+              type="text"
+              placeholder="내 답변"
+              required
+              name="interview"
+            />
+          </fieldset>
+          <fieldset class="fieldset fieldset4">
+            <legend>응원</legend>
+            <p class="form-question">
+              당신은 지금 한 기업의 최종면접을 앞두고 있습니다. 면접장에
+              들어가기 직전, 자기 자신에게 해주고 싶은 말은?
+            </p>
+            <input
+              type="text"
+              placeholder="내 답변"
+              required
+              name="final-interview"
+            />
+          </fieldset>
+          <fieldset class="fieldset fieldset5">
+            <legend>면접 질문</legend>
+            <p class="form-question">
+              다음 중 기술 면접 때 듣고 싶은 질문이 아닌 것은?
+            </p>
+            <select name="interview-question" required>
+              <option value="">선택</option>
+              <option value="tech-stack">
+                해당 기술 스택을 사용한 이유는?
+              </option>
+              <option value="like-dev">개발을 좋아하는가?</option>
+              <option value="problem">협업 시 생긴 갈등 해결 방법은?</option>
+            </select>
+          </fieldset>
+          <fieldset class="fieldset fieldset6">
+            <legend>취업 희망 날짜</legend>
+            <p class="form-question">취업을 희망하는 날짜를 선택해주세요</p>
+            <label for="date">날짜</label
+            ><input type="date" id="date" required name="date" />
+          </fieldset>
+          <fieldset class="fieldset fieldset7">
+            <legend>업무 시간</legend>
+            <p class="form-question">
+              업무를 시작하기에 가장 적당한 시간을 고르세요
+            </p>
+            <label for="time">시간</label
+            ><input type="time" id="time" required name="time" />
+          </fieldset>
+          <footer class="form-footer">
+            <button class="submit">제출</button>
+            <button type="reset" class="reset">양식 지우기</button>
+          </footer>
+        </form>
+      </main>
+    </section>
+  </body>
+</html>

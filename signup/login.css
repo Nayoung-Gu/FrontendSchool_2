@@ -13,19 +13,20 @@ a {
 
 .login {
   background-color: white;
-  width: 50%;
+  width: 500px;
   height: 450px;
   margin: 100px auto;
   border-radius: 20px;
+  box-shadow: 10px 10px 100px 0 #dddfe0;
 }
 
 .login-header__title {
   height: 80px;
   width: 80%;
   color: #00c850;
-  font-size: 50px;
+  font-size: 40px;
   text-align: center;
-  padding-top: 20px;
+  padding-top: 23px;
   border-bottom: 1px solid #dddfe0;
   margin: 0 auto 40px auto;
 }

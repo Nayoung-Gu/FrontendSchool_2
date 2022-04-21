@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>join</title>
-    <link rel="stylesheet" href="0331_join.css" />
+    <link rel="stylesheet" href="join.css" />
   </head>
   <body>
     <main class="login">
@@ -14,7 +14,7 @@
       </header>
       <form class="login-form">
         <div class="login-div">
-          <label for="id">아이디</label>
+          <label for="id" class="required">아이디</label>
           <input
             type="text"
             id="id"
@@ -24,19 +24,21 @@
           />
         </div>
         <div class="login-div">
-          <label for="pw">비밀번호</label>
+          <label for="pw" class="required">비밀번호</label>
           <input type="password" id="pw" required />
         </div>
         <div class="login-div">
-          <label for="pw2" for="">비밀번호 확인</label>
+          <label for="pw2" class="required">비밀번호 확인</label>
           <input type="password" id="pw2" required />
         </div>
         <div class="login-div">
-          <label for="name">이름</label>
+          <label for="name" class="required">이름</label>
           <input type="text" id="name" required />
         </div>
 
-        <label for="birth" class="label__birth">생년월일</label>
+        <label for="birth" class="label__birth" class="required"
+          >생년월일</label
+        >
         <br />
 
         <input
@@ -74,7 +76,7 @@
         </div>
 
         <div class="login-div">
-          <label for="phone">휴대전화</label>
+          <label for="phone" class="required">휴대전화</label>
           <div class="phone-wrap">
             <input
               type="tel"
