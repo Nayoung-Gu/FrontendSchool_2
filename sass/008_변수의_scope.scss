@@ -1,0 +1,19 @@
+.one {
+  $value: red !global; //!global은 지양하는 것이 좋다.
+  color: $value;
+  .two {
+    color: $value;
+  }
+}
+
+.two {
+  $value: red;
+  color: $value;
+  @at-root.two {
+    color: $value;
+  }
+}
+
+.three {
+  color: $value;
+}

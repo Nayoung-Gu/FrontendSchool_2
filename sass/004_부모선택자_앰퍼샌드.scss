@@ -1,0 +1,30 @@
+//Scss
+ul {
+  li {
+    &:nth-child(1) {
+      color: red;
+    }
+    &:nth-child(2) {
+      color: green;
+    }
+    &:nth-child(3) {
+      color: blue;
+    }
+  }
+}
+//li 태그의 가상요소와 가상클래스에게 스타일을 적용한 예시
+//&을 사용하여 li와 :hover, :last-child를 연결
+
+//Scss
+.box {
+  &-yellow {
+    background: #ff6347;
+  }
+  &-red {
+    background: #ffd700;
+  }
+  &-green {
+    background: #9acd32;
+  }
+}
+//.box라는 이름이 같기 때문에 &를 사용해 중첩구조로 만들 수 있다
