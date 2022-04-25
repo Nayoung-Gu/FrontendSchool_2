@@ -1,0 +1,9 @@
+.item {
+  background-color: orange;
+  width: auto;
+  height: auto;
+}
+
+.item:nth-child(even) {
+  margin-left: auto;
+}
