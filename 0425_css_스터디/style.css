@@ -1,7 +1,8 @@
 .item {
   background-color: orange;
-  width: auto;
+  width: 50%;
   height: auto;
+  padding: 50px;
 }
 
 .item:nth-child(even) {
