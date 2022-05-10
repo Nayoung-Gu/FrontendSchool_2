@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/b8c83217b9.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="0422_style.css" />
+    <title>Calendar</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="tit-header">NAVER <strong>캘린더</strong></h1>
+      <nav class="nav-header">
+        <ul class="nav-list">
+          <li>
+            <button><i class="fa fa-solid fa-envelope-open"></i></button>
+          </li>
+          <li>
+            <button><i class="fa fa-solid fa-calendar"></i></button>
+          </li>
+          <li>
+            <button><i class="fa fa-solid fa-list"></i></button>
+          </li>
+          <li>
+            <button><i class="fa fa-solid fa-credit-card"></i></button>
+          </li>
+          <li>
+            <button><i class="fa fa-brands fa-dropbox"></i></button>
+          </li>
+        </ul>
+      </nav>
+      <article class="header__user-btns">
+        <h3 class="hidden">유저 정보와 알림 사항 및 메뉴</h3>
+        <button class="user-btn user-icon">
+          <i class="fa fa-solid fa-user"></i><span id="user-name">Mooongs</span>
+        </button>
+        <button class="user-btn"><i class="fa fa-solid fa-bell"></i></button>
+        <button class="user-btn"><i class="fa fa-solid fa-bars"></i></button>
+      </article>
+    </header>
+    <main class="cont-main">
+      <article class="cont-calendar">
+        <h2 class="tit-calendar">
+          <button class="btn btn-before">
+            <i class="fa fa-solid fa-chevron-left"></i>
+          </button>
+          <span class="tit-year">2022</span>
+          <span class="tit-month">04</span>
+          <button class="btn btn-after">
+            <i class="fa fa-solid fa-chevron-right"></i>
+          </button>
+        </h2>
+        <div class="content">
+          <ol class="day-list">
+            <li style="color: red">일</li>
+            <li>월</li>
+            <li>화</li>
+            <li>수</li>
+            <li>목</li>
+            <li>금</li>
+            <li>토</li>
+          </ol>
+          <ol class="date-list">
+            <li>
+              <time datetime="2022-04-1">1</time>
+            </li>
+            <li>
+              <time datetime="2022-04-2">2</time>
+            </li>
+            <li>
+              <time datetime="2022-04-3">3</time>
+            </li>
+            <li>
+              <time datetime="2022-04-4">4</time>
+            </li>
+            <li>
+              <time datetime="2022-04-5">5</time>
+            </li>
+            <li>
+              <time datetime="2022-04-6">6</time>
+            </li>
+            <li>
+              <time datetime="2022-04-7">7</time>
+            </li>
+            <li>
+              <time datetime="2022-04-8">8</time>
+            </li>
+            <li>
+              <time datetime="2022-04-9">9</time>
+            </li>
+            <li>
+              <time datetime="2022-04-10">10</time>
+            </li>
+            <li>
+              <time datetime="2022-04-11">11</time>
+            </li>
+            <li>
+              <time datetime="2022-04-12">12</time>
+            </li>
+            <li>
+              <time datetime="2022-04-13">13</time>
+            </li>
+            <li>
+              <time datetime="2022-04-14">14</time>
+            </li>
+            <li>
+              <time datetime="2022-04-15">15</time>
+            </li>
+            <li>
+              <time datetime="2022-04-16">16</time>
+            </li>
+            <li>
+              <time datetime="2022-04-17">17</time>
+            </li>
+            <li>
+              <time datetime="2022-04-18">18</time>
+            </li>
+            <li>
+              <time datetime="2022-04-19">19</time>
+            </li>
+            <li>
+              <time datetime="2022-04-20">20</time>
+            </li>
+            <li>
+              <time datetime="2022-04-21">21</time>
+            </li>
+            <li>
+              <time datetime="2022-04-22">22</time>
+            </li>
+            <li>
+              <time datetime="2022-04-23">23</time>
+            </li>
+            <li>
+              <time datetime="2022-04-24">24</time>
+            </li>
+            <li>
+              <time datetime="2022-04-25">25</time>
+            </li>
+            <li>
+              <time datetime="2022-04-26">26</time>
+            </li>
+            <li>
+              <time datetime="2022-04-27">27</time>
+            </li>
+            <li>
+              <time datetime="2022-04-28">28</time>
+            </li>
+            <li>
+              <time datetime="2022-04-29">29</time>
+            </li>
+            <li>
+              <time datetime="2022-04-30">30</time>
+            </li>
+          </ol>
+        </div>
+      </article>
+      <div class="plan-btns">
+        <button>일정, 약속쓰기</button><button>기념일 관리</button>
+      </div>
+    </main>
+  </body>
+</html>

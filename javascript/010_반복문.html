@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 문제 1
+        // 100까지의 숫자 중 8이 나오는 횟수
+
+        // 방법 1
+        sum = '';
+        for (let i = 0; i < 100; i++){
+            sum += i;
+        }
+        let count = 0;
+        for (let i = 0; i < sum.length; i++){
+            if (sum[i] == '8'){
+                count ++;
+            }
+        }
+
+        // 방법 2
+        Array(100).fill(0).map((v, i)=>v+i).join('').split('').filter(x => x == '8').length
+
+        // 문제 2
+        // 
+        let data = [
+            {회원번호:0, 아이디:'a', 성별:'남', 나이:21},
+            {회원번호:1, 아이디:'b', 성별:'남', 나이:17},
+            {회원번호:2, 아이디:'c', 성별:'여', 나이:6},
+            {회원번호:3, 아이디:'d', 성별:'여', 나이:55}
+        ]
+
+        for (let i = 0; i < data.length; i++) {
+            console.log(data[i]);
+        }
+
+        for (let i = 0; i < data.length; i++) {
+            if(data[i]['나이'] >= 20 && data[i]['성별'] == '여'){
+                console.log(data[i][회원번호])
+            }
+        }
+
+        for (let i = 0; i < data.length; i++) {
+            if(data[i]['나이'] >= 20 && data[i]['성별'] == '여'){
+                console.log(data[i]['회원번호'])
+            }
+        }
+
+        result = []
+        for (let i = 0; i < data.length; i++) {
+            if(data[i]['나이'] >= 20 && data[i]['성별'] == '여'){
+                result.push(data[i]['회원번호'])
+            }
+        }
+
+        data.filter(i=> i['나이'] >= 20 && i['성별'] == '여')
+
+        let 나이총합 = 0
+        for (let i = 0; i < data.length; i++) {
+            나이총합 += data[i]['나이'] // 나이총합 = 나이총합 + data[i]['나이']
+        }
+
+        나이총합/data.length
+
+        data.map(i=> i['나이'])
+
+        data.map(i=> i['나이']).reduce((a, b) =>a + b, 0)
+
+
+        // 문제 3
+        // 'hello world'에서 1이 사용된 개수를 구해주세요.
+
+        const txt = 'hello world';
+        count = 0;
+        for(let i = 0; i < txt.length; i++){
+            if(txt[i] == 'l'){
+                count++;
+            }
+        }
+        console.log(count);
+
+
+        // 문제 4
+        // '12390812476' 각 자리수의 숫자를 더하세요.
+
+        const numString = '12390812476';
+        count = 0;
+        for (let i = 0; i<numString.length; i++){
+            count += parseInt(numString[i]);
+        }
+
+        console.log(count);
+
+
+        // 문제 5
+        // arr의 평균
+
+        const arr = ['33', '29', '11', '55', '47'];
+        let sum = 0;
+        for (let i = 0; i<arr.length; i++){
+            sum += parseInt(arr[i]);
+        }
+        const average = sum / arr.length;
+        console.log(average);
+
+        // 문제 6
+        // 0부터 100까지의 모든 짝수 총함
+
+        sum = 0;
+        for (let i = 0; i <= 100; i+=2){
+            sum += i;
+        }
+        console.log(sum);
+
+        // continue
+        // break는 탈출, continue는 다음 루프로
+        i = 0
+        while(i<100){
+            i++;
+            console.log(i, 'start')
+            if (i > 10) {
+                continue
+            }
+            console.log(i, 'end')  
+        }
+        console.log('end')
+
+        // while
+        let i = 2;
+        let j = 1;
+        while(i < 10){
+            while(j < 10) {
+                console.log(`${i} X ${j} = ${i*j}`)
+                j++;
+            }
+            j = 1;
+            i++;
+        }
+    </script>
+</body>
+</html>

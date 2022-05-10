@@ -1,0 +1,58 @@
+.mainCaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 750px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.year {
+  color: darkred;
+  font-size: 120px;
+  margin-right: 30px;
+}
+
+.maxim {
+  color: rgb(128, 126, 126);
+}
+
+.maxim-en,
+.maxim-ko {
+  margin: 5px;
+}
+
+.month {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.calendar {
+  box-sizing: border-box;
+  float: left;
+  margin: 30px;
+}
+
+.sun {
+  color: red;
+}
+
+th,
+td {
+  text-align: center;
+  font-size: 13px;
+}
+
+td {
+  font-size: 12px;
+}
+
+.red {
+  color: red;
+}
+
+tr th:first-child,
+tr td:first-child,
+.holiday {
+  color: red;
+}

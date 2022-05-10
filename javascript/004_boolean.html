@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let value1 = 30;
+        // let value2 = 50;
+
+        // console.log(value1 > value2);
+        // console.log(value1 >= value2);
+        // console.log(value1 < value2);
+        // console.log(value1 <= value2);
+        // console.log(value1 == value2);
+        // value1 = 30;
+        // value2 = '30';
+        // console.log(value1 == value2);
+        // console.log(value1 === value2);
+        // console.log(value1 != value2);
+        // console.log(value1 != value2);
+        // console.log(value1 !== value2);
+        // console.log(!value1);
+        // console.log(!!value2);
+        
+
+        // 헷갈리는 부분
+
+        document.write(`1. ${'0' == 0}<br>`); // true
+        document.write(`2. ${'0' === 0}<br>`); // false
+        document.write(`3. ${false == 0}<br>`); // true
+        document.write(`4. ${true == 1}<br>`);  // true
+        document.write(`5. ${false === 0}<br>`); // false
+        document.write(`6. ${false == '0'}<br>`); // true
+        document.write(`7. ${false == 'false'}<br>`); // false
+        document.write(`8. ${0 == ''}<br>`); // true 주의
+        document.write(`9. ${false == ''}<br>`); // true 주의
+        document.write(`10. ${false == null}<br>`); // false 주의
+        document.write(`11. ${false == undefined}<br>`); // false 주의
+        document.write(`12. ${NaN == NaN}<br>`); // false 주의!!!
+        document.write(`13. ${NaN === NaN}<br>`); // false 주의!!!
+        document.write(`14. ${isNaN(undefined)}<br>`); // true 주의
+        document.write(`15. ${isNaN(null)}<br>`); // false 주의
+        document.write(`16. ${isNaN(NaN)}<br>`); // true 주의
+        document.write(`17. ${Number.isNaN(undefined)}<br>`); // false 주의
+        document.write(`18. ${![]}<br>`); // false 주의
+        document.write(`19. ${!{}}<br>`); // false 주의
+
+        if([]) {
+            document.write('hello world 1 <br>'); // 출력됨
+        }
+
+        if({}) {
+            document.write('hello world 2'); // 출력됨
+        }
+
+        if('') {
+            document.write('hello world 3'); // 출력 안됨
+        }
+
+        if(undefined) {
+            document.write('hello world 4'); // 출력 안됨
+        }
+
+        console.log(`1 ${!!undefined}`);
+        console.log(`2 ${!!null}`);
+        console.log(`3 ${!!NaN}`);
+        console.log(`4 ${!!Infinity}`);
+        console.log(`5 ${!![]}`); // 주의
+        console.log(`6 ${!!{}}`); // 주의
+        console.log(`7 ${!!''}`); // 주의
+        console.log(`8 ${!!0}`);
+        console.log(`9 ${!!'hello world'}`);
+        console.log(`10 ${!!-100}`);
+
+    </script>
+</body>
+</html>

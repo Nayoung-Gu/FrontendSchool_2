@@ -1,0 +1,24 @@
+ul li:nth-child(1) {
+  color: red;
+}
+
+ul li:nth-child(2) {
+  color: green;
+}
+
+ul li:nth-child(3) {
+  color: blue;
+}
+
+.box-yellow {
+  background: #ff6347;
+}
+
+.box-red {
+  background: #ffd700;
+}
+
+.box-green {
+  background: #9acd32;
+}
+/*# sourceMappingURL=004_부모선택자_앰퍼샌드.css.map */
