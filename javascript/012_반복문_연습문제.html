@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 다음 array의 각 자리수의 합을 구하세요.
+        let arr = [11, 22, 33, 111, 2];
+        let sum = 0;
+        for (let i of arr) {
+            let s = ''+i;
+            for (let j of s.split('')){
+                sum += +j
+            }
+        }
+        console.log(sum);
+
+        let str = arr.join('');
+        let result = 0;
+        for (let i = 0; i < str.length; i++){
+            result += parseInt(str[i], 10)
+        }
+    </script>
+</body>
+</html>
