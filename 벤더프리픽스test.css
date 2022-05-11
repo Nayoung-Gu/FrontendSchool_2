@@ -1,0 +1,6 @@
+/* autoprefixer 설치하고 저장하면 자동 완성 */
+p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
