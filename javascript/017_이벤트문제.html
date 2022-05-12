@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+        
+        .black {
+            background-color: black;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .cont-btns {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <div class="black box"></div>
+    <div class="cont-btns">
+        <button class="btn-red">빨강</button>
+        <button class="btn-yellow">노랑</button>
+        <button class="btn-green">초록</button>
+    </div>
+    
+    <script>
+        const redBtn = document.querySelector(".btn-red");
+        const yellowBtn = document.querySelector(".btn-yellow");
+        const greenBtn = document.querySelector(".btn-green");
+        const box = document.querySelector(".box");
+        
+        // 내 코드..반복 쏘머치
+        // redBtn.addEventListener("click", function(){
+        //     box.classList.remove("red", "yellow", "green");
+        //     box.classList.add("red");
+        // })
+
+        // yellowBtn.addEventListener("click", function(){
+        //     box.classList.remove("red", "yellow", "green");
+        //     box.classList.add("yellow");
+        // })
+
+        // greenBtn.addEventListener("click", function(){
+        //     box.classList.remove("red", "yellow", "green");
+        //     box.classList.add("green");
+        // })
+
+        // 재현님 코드
+        const btnArr = [redBtn, yellowBtn, greenBtn];
+        btnArr.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                box.classList.remove('red', 'yellow', 'green');
+                if(btn.className == 'btn-red') {
+                    console.log('hi')
+                    box.classList.add('red');
+                } else if(btn.className == 'btn-yellow') {
+                    box.classList.add('yellow');
+                } else {
+                    box.classList.add('green');
+                }
+            })
+        })
+    </script>
+</body>
+</html>
