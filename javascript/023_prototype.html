@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function NewFactory2(name){
+            this.name = name
+        }
+
+        // prototype: 메서드 저장 (새로 함수를 생성하지 않고 공유)
+        NewFactory2.prototype.sayYourName = function(){
+            console.log(`삐리삐리. 제 이름은 ${this.name}입니다.`);
+        }
+
+        // 실습 1
+        // FoodBot의 메서드를 프로토타입으로 분리해보세요.
+        // 그리고 객체의 메서드가 서로 동일한 주소를 참조하는지 확인해보세요.
+        const foods = ['짜장면', '뽁음밥', '해장국', '치킨'];
+
+        // function FoodBot(foodNames) {
+        //     this.menu = foodNames;
+        //     this.sayMenu = function () {
+        //         console.log(this.menu[Math.floor(Math.random() * this.menu.length)]);
+        //     }
+        // }
+
+        // const foodBotMark1 = new FoodBot(foods);
+
+        function FoodBot2(foodNames){
+            this.menu = foodNames
+        }
+
+        FoodBot2.prototype.sayMenu = function(){
+            console.log(this.menu[Math.floor(Math.random() * this.menu.length)]);
+        }
+
+        // 실습 2 (객체지향개념 적용)
+        function Me(name, address, phoneNum){
+            this.name = name;
+            this.address = address;
+            this.phoneNum = phoneNum;
+        }
+
+        Me.prototype.canWalk = function(){
+            console.log('재현이가 걷는다');
+        }
+
+        Me.prototype.teaching = function(student){
+            student.levelUp();
+        }
+
+        function Student(level){
+            this.level = level;
+        }
+
+        Student.prototype.levelUp = function(){
+            this.level++;
+        }
+    </script>
+</body>
+</html>

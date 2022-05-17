@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const me = {
+            name: '구나영',
+            address: '서울시',
+            phoneNum: '010-1234-5678',
+            favFoods: ['피자', '떡볶이'],
+            learning: function(student, lang){
+                student.levelUp();
+                student.language.push(lang)
+            }
+        }
+
+        const student = {
+            level: 1,
+            levelUp: function(){
+                this.level++;
+            },
+            language: []
+        }
+
+        me.learning(student, 'python')
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Parent(){
+            this.name = '재현';
+        }
+
+        Parent.prototype.rename = function(name){
+            this.name = name;
+        }
+
+        Parent.prototype.sayName = function(){
+            console.log(this.name);
+        }
+
+        function Child(){
+            // call: 프로퍼티 받아오기
+            Parent.call(this);
+        }
+
+        // Object.create: 함수 상속받기
+        Child.prototype = Object.create(Parent.prototype);
+        Child.prototype.canWalk = function(){
+            console.log('걷는다!');
+        }
+    </script>
+</body>
+</html>
