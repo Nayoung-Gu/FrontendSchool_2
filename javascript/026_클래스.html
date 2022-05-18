@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Robot(name){
+            this.name = name;
+        }
+
+        Robot.prototype.sayYourName = function(){
+            console.log(`제 이름은 ${this.name}입니다.`)
+        }
+
+        const bot1 = new Robot('재현');
+
+        class RobotClass{
+            // class 안에서는 'function' 생략
+            constructor(name){
+                this.name = name;
+            }
+
+            sayYourName(){
+                console.log(`제 이름은 ${this.name}입니다.`)
+            }
+        }
+
+        const botClass1 = new RobotClass('katy')
+
+        // 실습 : 나를 소개하는 클래스 만들기
+        class Me {
+            constructor(name, address, phoneNum){
+                this.name = name;
+                this.address = address;
+                this.phoneNum = phoneNum;
+            }
+
+            canWalk = function(){
+                console.log('재현이가 걷는다')
+            }
+
+            teaching = function (student){
+                student.levelUp();
+            }
+        }
+
+        class Student {
+            constructor(level){
+                this.level == level;
+            }
+
+            levelUp = function(){
+                this.level++;
+            }
+        }
+
+        const me = new Me('나영', '서울시', '010-1234-5660');
+        const student = new Student(1);
+
+
+        // 클래스의 상속
+        class Robot {
+            constructor(name){
+                this.name = name;
+            }
+
+            sayYourName(){
+                console.log(`hi, my name is ${this.name}`)
+            }
+            }
+
+            class BabyRobot extends Robot {
+                constructor(name){
+                    super(name)
+                    this.ownName = '아이크';
+                }
+
+                sayBabyName (){
+                    this.sayYourName();
+                    console.log('Suceeding you, Father!')
+                }
+            }
+
+            const baby = new BabyRobot('재현');
+
+            // 실습
+            class Sausage{
+                constructor(ingre1, ingre2){
+                    this.ingre1 = ingre1;
+                    this.ingre2 = ingre2;
+                }
+
+                taste(){
+                    console.log(`${this.ingre1}와 ${this.ingre2} 맛이 난다!`)
+                }
+            }
+
+            class FireSausage extends Sausage {
+                taste(){
+                    console.log('불맛이 나기 시작합니다')
+                }
+            }
+
+            // 재현님 코드
+            class Sausage {
+                constructor(el1, el2){
+                    this.inside1 = el1;
+                    this.inside2 = el2;
+                }
+
+                taste(){
+                    console.log(`${this.inside1}와 ${this.inside2}의 맛이 난다!`);
+                }
+            }
+
+            class FireSausage extends Sausage {
+                taste(){
+                    console.log(`${this.ingre1}와 ${this.ingre2} 맛이 난다! 불맛도 난다!`);
+                }
+            }
+
+    </script>
+</body>
+</html>
