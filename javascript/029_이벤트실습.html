@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 200px;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        margin: 100px;
+        /* transition: 0.3s; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <script>
+      const box = document.querySelector(".box");
+      let pos = 0;
+      let keys = {};
+
+      function move(event) {
+        keys[event.key] = true;
+      }
+
+      function stop(event) {
+        keys[event.key] = false;
+      }
+
+      document.addEventListener("keydown", move);
+      document.addEventListener("keyup", stop);
+
+      //   function move(event) {
+      //     // 왼쪽 화살표 키 누르면 박스가 왼쪽으로 이동
+      //     if (event.keyCode === 37) {
+      //       pos -= 5;
+      //     }
+      //     // 오른쪽 화살표 키 누르면 박스가 오른쪽으로 이동
+      //     if (event.keyCode === 39) {
+      //       pos += 5;
+      //     }
+      //   }
+
+      function play() {
+        if (keys.ArrowRight) {
+          pos += 5;
+          box.style.transform = `translateX(${pos}px)`;
+        }
+        if (keys.ArrowLeft) {
+          pos -= 5;
+          box.style.transform = `translateX(${pos}px)`;
+        }
+
+        window.requestAnimationFrame(play);
+      }
+
+      window.requestAnimationFrame(play);
+    </script>
+  </body>
+</html>
