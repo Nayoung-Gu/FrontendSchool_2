@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>쇼핑몰 웹 페이지</title>
+    <style>
+      /* reset */
+      html,
+      body,
+      div,
+      span,
+      applet,
+      object,
+      iframe,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      blockquote,
+      pre,
+      a,
+      abbr,
+      acronym,
+      address,
+      big,
+      cite,
+      code,
+      del,
+      dfn,
+      em,
+      img,
+      ins,
+      kbd,
+      q,
+      s,
+      samp,
+      small,
+      strike,
+      strong,
+      sub,
+      sup,
+      tt,
+      var,
+      b,
+      u,
+      i,
+      center,
+      dl,
+      dt,
+      dd,
+      ol,
+      ul,
+      li,
+      fieldset,
+      form,
+      label,
+      legend,
+      table,
+      caption,
+      tbody,
+      tfoot,
+      thead,
+      tr,
+      th,
+      td,
+      article,
+      aside,
+      canvas,
+      details,
+      embed,
+      figure,
+      figcaption,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      output,
+      ruby,
+      section,
+      summary,
+      time,
+      mark,
+      audio,
+      video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+
+      /* HTML5 display-role reset for older browsers */
+      article,
+      aside,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      section {
+        display: block;
+      }
+      body {
+        line-height: 1;
+      }
+      ol,
+      ul {
+        list-style: none;
+      }
+      blockquote,
+      q {
+        quotes: none;
+      }
+      blockquote:before,
+      blockquote:after,
+      q:before,
+      q:after {
+        content: "";
+        content: none;
+      }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+      :root {
+        --main-color: #6327fe;
+        --txt-color: #333333;
+        --border-color: #c4c4c4;
+        --sub-border-color: #e0e0e0;
+        --bg-color: #f2f2f2;
+        --emphasis-txt-color: #eb5757;
+        --sub-txt-color: #828282;
+        --button-border: #bdbdbd;
+      }
+
+      div,
+      span,
+      article,
+      section,
+      header,
+      main,
+      footer,
+      p,
+      ul,
+      li,
+      label,
+      a,
+      nav,
+      h1,
+      h2,
+      h3,
+      form,
+      input,
+      button,
+      img,
+      textarea,
+      table,
+      thead,
+      tbody,
+      tr,
+      th,
+      td {
+        box-sizing: border-box;
+      }
+
+      body,
+      html {
+        width: 100%;
+        height: 100%;
+      }
+
+      body,
+      button {
+        font-family: "Spoqa Han Sans Neo", "sans-serif";
+      }
+
+      body {
+        font-weight: 400;
+        color: var(--txt-color);
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        vertical-align: top;
+      }
+
+      a {
+        display: block;
+        text-decoration: none;
+        color: #000;
+      }
+
+      table,
+      thead,
+      tbody,
+      tr {
+        display: block;
+      }
+
+      /* Image Replacement 약자 스크린리더가 읽을 수 있도록 대체텍스트 */
+      .ir {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+
+      /* 한줄 말줄임 */
+      .sl-ellipsis {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      /* 두줄 말줄임 */
+      .multi-ellipsis {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+
+      /* button 스타일 */
+      button {
+        border: none;
+        cursor: pointer;
+        padding: 0;
+      }
+
+      /* link-button 스타일 */
+      .link-btn {
+        position: sticky;
+        top: 60px;
+        width: 80px;
+        height: 80px;
+        background-color: var(--main-color);
+        border-radius: 50%;
+      }
+
+      /* 상품 리스트 */
+      /* 상품 이미지 스타일 */
+      .product-img {
+        position: relative;
+        width: 380px;
+        height: 380px;
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      /* 상품 이름 스타일 */
+      .product-name {
+        font-size: 18px;
+        line-height: 22px;
+      }
+
+      /* 상품 가격 스타일 */
+      /* medium 사이즈 */
+      .m-price {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+      .m-price span {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        margin-left: 2px;
+      }
+
+      .product-price {
+        display: flex;
+        align-items: center;
+      }
+
+      .product-price .price-discount {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+      }
+
+      .product-price .price-strikethrough {
+        font-size: 16px;
+        line-height: 20px;
+        color: var(--sub-txt-color);
+        text-decoration-line: line-through;
+        margin-right: 10px;
+      }
+
+      /* 좋아요 버튼 */
+      .like-btn {
+        width: 22px;
+        height: 22px;
+        border: none;
+        background: url(../assets/icon-heart.svg) no-repeat center / contain;
+      }
+
+      .like-btn.on {
+        background: url(../assets/icon-heart-on.svg) no-repeat center / contain;
+      }
+
+      /* 상품 목록 페이지 */
+      .product {
+        display: flex;
+        justify-content: center;
+        margin-top: 160px;
+        padding-bottom: 156px;
+      }
+
+      .product .product-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 60px;
+        width: 1260px;
+        margin-right: 60px;
+      }
+
+      .product .product-item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .product .product-item .product-name {
+        width: 338px;
+        margin: 20px 0 10px;
+      }
+
+      .product .product-item .like-btn {
+        position: absolute;
+        right: 0;
+        bottom: 40px;
+      }
+
+      .product .cart-link {
+        background: var(--main-color)
+          url(../assets/icon-shopping-cart-white.svg) no-repeat center / 40px
+          40px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 
+    <div>header
+        <h1>000 웹 페이지</h1>
+        <div>menu</div>
+    </div>
+
+    <div>main
+        <h2>hello world</h2>
+        <p>hello world</p>
+    </div>
+
+    <div>
+        product
+        div{잘팔리는 옷}*20
+    </div>
+
+    <div>
+        footer
+    </div> 
+    -->
+    <div id="root"></div>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"
+      integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="text/babel">
+      const data = [
+        {
+          id: 1,
+          productName: "버그를 Java라 버그잡는 개리씨 키링 개발자키링 금속키링",
+          price: 12500,
+          stockCount: 100,
+          thumbnailImg: "asset/img/1/thumbnailImg.jpg",
+          option: [],
+          discountRate: 0,
+          shippingFee: 1500,
+          detailInfoImage: [
+            "asset/detail/2/detail1.png",
+            "asset/detail/2/detail2.png",
+          ],
+          viewCount: 0,
+          pubDate: "2022-02-28",
+          modDate: "2022-02-28",
+        },
+        {
+          id: 2,
+          productName: "우당탕탕 라이캣의 실험실 스티커 팩",
+          price: 3500,
+          stockCount: 1000,
+          thumbnailImg: "asset/img/2/thumbnailImg.jpg",
+          option: [],
+          discountRate: 0,
+          shippingFee: 1500,
+          detailInfoImage: [
+            "asset/detail/2/detail1.png",
+            "asset/detail/2/detail2.png",
+          ],
+          viewCount: 0,
+          pubDate: "2022-02-28",
+          modDate: "2022-02-28",
+        },
+        {
+          id: 3,
+          productName: "딥러닝 개발자 무릎 담요",
+          price: 17500,
+          stockCount: 0,
+          thumbnailImg: "asset/img/3/thumbnailImg.jpg",
+          option: [],
+          discountRate: 0,
+          shippingFee: 1500,
+          detailInfoImage: [
+            "asset/detail/3/detail1.png",
+            "asset/detail/3/detail2.png",
+            "asset/detail/3/detail3.png",
+          ],
+          viewCount: 0,
+          pubDate: "2022-02-28",
+          modDate: "2022-02-28",
+        },
+        {
+          id: 4,
+          productName: "네 개발잡니다 개발자키링 금속키링",
+          price: 13500,
+          stockCount: 100,
+          thumbnailImg: "asset/img/4/thumbnailImg.jpg",
+          option: [],
+          discountRate: 0,
+          shippingFee: 1500,
+          detailInfoImage: [
+            "asset/detail/4/detail1.png",
+            "asset/detail/4/detail2.png",
+          ],
+          viewCount: 0,
+          pubDate: "2022-02-28",
+          modDate: "2022-02-28",
+        },
+        {
+          id: 5,
+          productName: "Hack Your Life 개발자 노트북 파우치",
+          price: 36000,
+          stockCount: 230,
+          thumbnailImg: "asset/img/5/thumbnailImg.jpg",
+          option: [
+            {
+              id: 1,
+              optionName: "13인치",
+              additionalFee: 0,
+            },
+            {
+              id: 2,
+              optionName: "15인치",
+              additionalFee: 1000,
+            },
+          ],
+          discountRate: 19,
+          shippingFee: 1500,
+          detailInfoImage: [
+            "asset/detail/5/detail1.png",
+            "asset/detail/5/detail2.png",
+          ],
+          viewCount: 0,
+          pubDate: "2022-02-28",
+          modDate: "2022-02-28",
+        },
+        {
+          id: 6,
+          productName: "[NEW] 위니브 개발자, 캐릭터 스티커팩 2종",
+          price: 5500,
+          stockCount: 1000,
+          thumbnailImg: "asset/img/6/thumbnailImg.jpg",
+          option: [
+            {
+              id: 1,
+              optionName: "위니브 개발자 스티커팩",
+              additionalFee: 0,
+            },
+            {
+              id: 2,
+              optionName: "위니브 프랜즈 스티커팩",
+              additionalFee: 0,
+            },
+            {
+              id: 3,
+              optionName: "스티커팩 세트(개발자+프렌즈)",
+              additionalFee: 5000,
+            },
+          ],
+          discountRate: 0,
+          shippingFee: 1500,
+          detailInfoImage: [
+            "asset/detail/6/detail1.png",
+            "asset/detail/6/detail2.png",
+            "asset/detail/6/detail3.png",
+            "asset/detail/6/detail4.png",
+            "asset/detail/6/detail5.png",
+          ],
+          viewCount: 0,
+          pubDate: "2022-02-28",
+          modDate: "2022-02-28",
+        },
+        {
+          id: 7,
+          productName: "제주코딩베이스캠프 코딩 연습장 세트",
+          price: 8000,
+          stockCount: 1000,
+          thumbnailImg: "asset/img/7/thumbnailImg.jpg",
+          option: [],
+          discountRate: 0,
+          shippingFee: 1500,
+          detailInfoImage: [
+            "asset/detail/7/detail1.png",
+            "asset/detail/7/detail2.png",
+          ],
+          viewCount: 0,
+          pubDate: "2022-02-28",
+          modDate: "2022-02-28",
+        },
+      ];
+
+      // console.log(data)
+      // console.log(data[0])
+
+      const Header = function (props) {
+        console.log(props);
+        return (
+          <div>
+            header
+            <h1>{props.name} 쇼핑몰</h1>
+            <div>menu</div>
+          </div>
+        );
+      };
+
+      const Main = function () {
+        return (
+          <div>
+            main
+            <h2>hello world</h2>
+            <p>hello world</p>
+          </div>
+        );
+      };
+
+      const Card = function (props) {
+        console.log(props.goods);
+        return (
+          <div className="product-item">
+            <h3 className="product-name">{props.goods.productName}</h3>
+            <p className="product-price">{props.goods.price}</p>
+            <img
+              className="product-img"
+              src={"http://test.api.weniv.co.kr/" + props.goods.thumbnailImg}
+            />
+          </div>
+        );
+      };
+
+      const Product = function (props) {
+        // console.log(props.item)
+        return (
+          <div className="product-list">
+            <Card goods={props.item[0]} />
+            <Card goods={props.item[1]} />
+            <Card goods={props.item[2]} />
+            <Card goods={props.item[3]} />
+            <Card goods={props.item[4]} />
+            <Card goods={props.item[5]} />
+            <Card goods={props.item[6]} />
+          </div>
+        );
+      };
+
+      const Footer = function () {
+        return <div>footer</div>;
+      };
+
+      const body = (
+        <div className="product">
+          <Header name={"weniv"} age={10} />
+          <Main />
+          <Product item={data} />
+          <Footer />
+        </div>
+      );
+
+      const domContainer = document.querySelector("#root");
+      ReactDOM.render(body, domContainer);
+      console.log(ReactDOM);
+    </script>
+  </body>
+</html>
